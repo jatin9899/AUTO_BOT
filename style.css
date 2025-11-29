@@ -1,0 +1,71 @@
+
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+  color: aliceblue;
+  overflow: hidden;
+}
+
+p{
+  color: rgb(18, 246, 33);
+  font-size: 3rem;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+  user-select: none;
+}
+
+:root{
+  --x: 400px;
+  --y: 400px;
+}
+
+.video-box.abs {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+.abs-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* spotlight overlay */
+.spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(200px at var(--x) var(--y), transparent, rgba(0,0,0,0.95));
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* glowing cursor for center alignment */
+.cursor-dot {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  /* background: rgb(15, 16, 15); */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  /* box-shadow: 0 0 10px rgb(17, 16, 16), 0 0 25px rgb(238, 241, 238); */
+}
